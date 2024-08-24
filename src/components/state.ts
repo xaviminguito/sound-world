@@ -5,6 +5,7 @@ export type Track = {
   title: string;
   position: number;
   length: string;
+  track: string;
 };
 
 export type PlayerTrack = Track & {

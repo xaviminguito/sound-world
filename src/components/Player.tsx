@@ -63,7 +63,7 @@ export default function Player() {
 
   useEffect(() => {
     const newIndex = (songIndex % MAX_SONGS) + 1
-    audioPlayer.current.src = `/mp3/song${newIndex}.mp3`
+    audioPlayer.current.src = currentTrack.value.track
     audioPlayer.current.currentTime = 0
     audioPlayer.current.play()
     setSongIndex(newIndex)
@@ -138,7 +138,7 @@ export default function Player() {
             {artist}
           </div>
         </div>
-        <audio ref={audioPlayer} src="/mp3/song1.mp3" />
+        <audio ref={audioPlayer} />
         <div class="flex gap-6 items-center text-black">
           <button
             type="button"

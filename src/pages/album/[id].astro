@@ -3,13 +3,14 @@ import Layout from '../../layouts/Layout.astro'
 import PlayButton from '../../components/PlayButton'
 import TrackList from '../../components/TrackList'
 import Record from '../../components/Record'
+import album from '../../data/album.json';
 
 const { id } = Astro.params
 
 const response = await fetch(
   `https://music-api.charca.workers.dev/albums/${id}`
 )
-const album = await response.json()
+//const album = await response.json()
 ---
 
 <Layout title={`${album.strAlbum} by ${album.strArtist} - Astro Records`}>

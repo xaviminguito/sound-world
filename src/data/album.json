@@ -1,0 +1,24 @@
+{
+  "idAlbum": "djMins-hard-techno-24",
+  "idArtist": "112016",
+  "idLabel": "44390",
+  "strAlbum": "Hard Techno 2024",
+  "strArtist": "Dj Mins",
+  "intYearReleased": "2024",
+  "strStyle": "Rock/Pop",
+  "strGenre": "Hard techno",
+  "strLabel": "Island",
+  "intSales": "0",
+  "strAlbumThumb": "../../covers/hard-techno.jpg",
+  "track": "https://spain-djs.s3.eu-north-1.amazonaws.com/sessions/song5.mp3",
+  "tracks": [
+    {
+      "id": "ad8dfa68-9124-3959-bdea-a3f2ac72cf5f",
+      "title": "Jenny Was a Friend of Mine",
+      "length": "4:05",
+      "lengthMs": 244520,
+      "position": 1,
+      "track": "https://spain-djs.s3.eu-north-1.amazonaws.com/sessions/song5.mp3"
+    }
+  ]
+}
