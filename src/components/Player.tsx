@@ -131,7 +131,7 @@ export default function Player() {
           style={`width: ${progress}%`}
         ></div>
       </div>
-      <div class="container mx-auto max-w-screen-lg px-3 py-2 sm:px-6 sm:py-4 flex items-center gap-5">
+      <div class="container mx-auto max-w-screen-lg px-3 py-2 sm:px-6 sm:py-4 flex items-center gap-1">
         <img
           src={imageUrl}
           alt={`${artist} - ${albumName} album cover`}
@@ -148,7 +148,7 @@ export default function Player() {
             {artist}
           </div>
         </div>
-        <audio ref={audioPlayer} src={currentTrack.value.track} controls />
+        <audio class="min-w-96" ref={audioPlayer} src={currentTrack.value.track} controls />
         <div class="flex gap-6 items-center text-black">
           {/*<button
             type="button"

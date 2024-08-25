@@ -80,6 +80,7 @@ export default function TrackList({
                 }
 
                 isPlaying.value = isCurrentTrack ? !isPlaying.value : true
+                document.querySelector('#collection').textContent = currentTrack.value.title
               }}
             >
               <span class="text-gray-500 w-8 mr-2">
