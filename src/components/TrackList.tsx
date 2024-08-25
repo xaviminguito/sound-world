@@ -84,9 +84,9 @@ export default function TrackList({
             >
               <span class="text-gray-500 w-8 mr-2">
                 {isCurrentTrack && !isPlaying.value
-                  ? renderIcon(pauseIcon, track.position)
-                  : isCurrentTrack && isPlaying.value
                   ? renderIcon(playIcon, track.position)
+                  : isCurrentTrack && isPlaying.value
+                  ? renderIcon(pauseIcon, track.position)
                   : track.position}
               </span>
               <span class="sr-only"> - </span>

@@ -26,7 +26,7 @@ export default function Record({
         width="400"
         height="400"
         class="block rounded-md tag-album-cover relative z-10 bg-white"
-        style={`view-transition-name: record-${albumId};`}
+        transition-name={`record-${albumId}`}
       />
       <img
         src="/vynil-lp.webp"
@@ -34,7 +34,7 @@ export default function Record({
         width="400"
         height="400"
         class={className}
-        style={`view-transition-name: vinyl-${albumId};`}
+        transition-name={`vinyl-${albumId}`}
         aria-hidden="true"
       />
     </div>

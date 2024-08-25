@@ -38,7 +38,7 @@ const PauseIcon = (
 
 // This app doesn't have real songs, it only has a few songs
 // that we will play over and over as the user uses the app.
-const MAX_SONGS = 4
+//const MAX_SONGS = 4
 
 export default function Player() {
   const audioPlayer = useRef<HTMLAudioElement>(null)
@@ -62,10 +62,10 @@ export default function Player() {
   }
 
   useEffect(() => {
-    const newIndex = (songIndex % MAX_SONGS) + 1
-    audioPlayer.current.src = currentTrack.value.track
-    audioPlayer.current.currentTime = 0
-    audioPlayer.current.play()
+    const newIndex = (songIndex) + 1
+    //audioPlayer.current.src = currentTrack.value.track
+    //audioPlayer.current.currentTime = 0
+    audioPlayer.current?.play()
     setSongIndex(newIndex)
   }, [title])
 
@@ -73,11 +73,21 @@ export default function Player() {
     if (isPlaying.value) {
       audioPlayer.current?.play()
       progressRef.current = requestAnimationFrame(whilePlaying)
+      isPlaying.value = true
     } else {
       audioPlayer.current?.pause()
       cancelAnimationFrame(progressRef.current)
     }
   }, [isPlaying.value])
+
+  useEffect(() => {
+    audioPlayer.current.onpause = () => {
+      isPlaying.value = false
+    }
+    audioPlayer.current.onplay = () => {
+      isPlaying.value = true
+    }
+  });
 
   useEffect(() => {
     if (progress >= 99.99) {
@@ -91,7 +101,7 @@ export default function Player() {
       class="fixed bottom-0 left-0 right-0 bg-gray-100 z-10"
       role="region"
       aria-labelledby="audio-player-heading"
-      style={{ viewTransitionName: 'player' }}
+      transition-name="player"
     >
       <h2 id="audio-player-heading" class="sr-only">
         Audio player
@@ -138,52 +148,16 @@ export default function Player() {
             {artist}
           </div>
         </div>
-        <audio ref={audioPlayer} />
+        <audio ref={audioPlayer} src={currentTrack.value.track} controls />
         <div class="flex gap-6 items-center text-black">
-          <button
-            type="button"
-            disabled
-            class="opacity-50 focus-visible:ring-2 focus:outline-none focus:ring-black"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              class="w-10 h-10 hidden sm:block"
-              aria-hidden="true"
-              focusable="false"
-            >
-              <path d="M9.195 18.44c1.25.713 2.805-.19 2.805-1.629v-2.34l6.945 3.968c1.25.714 2.805-.188 2.805-1.628V8.688c0-1.44-1.555-2.342-2.805-1.628L12 11.03v-2.34c0-1.44-1.555-2.343-2.805-1.629l-7.108 4.062c-1.26.72-1.26 2.536 0 3.256l7.108 4.061z" />
-            </svg>
-            <span class="sr-only">Previous track</span>
-          </button>
-
-          <button
+          {/*<button
             type="button"
             class="focus-visible:ring-2 focus:outline-none focus:ring-black"
             onClick={() => (isPlaying.value = !isPlaying.value)}
           >
             {isPlaying.value ? PauseIcon : PlayIcon}
             <span class="sr-only">{isPlaying.value ? 'Pause' : 'Play'}</span>
-          </button>
-
-          <button
-            type="button"
-            disabled
-            class="opacity-50 focus-visible:ring-2 focus:outline-none focus:ring-black"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              class="w-10 h-10 hidden sm:block"
-              aria-hidden="true"
-              focusable="false"
-            >
-              <path d="M5.055 7.06c-1.25-.714-2.805.189-2.805 1.628v8.123c0 1.44 1.555 2.342 2.805 1.628L12 14.471v2.34c0 1.44 1.555 2.342 2.805 1.628l7.108-4.061c1.26-.72 1.26-2.536 0-3.256L14.805 7.06C13.555 6.346 12 7.25 12 8.688v2.34L5.055 7.06z" />
-            </svg>
-            <span class="sr-only">Next track</span>
-          </button>
+          </button>*/}
         </div>
       </div>
     </div>
