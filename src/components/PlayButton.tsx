@@ -18,6 +18,7 @@ export default function PlayButton({
   return (
     <button
       type="button"
+      translate={false}
       class="text-pink-700 bg-gray-100 hover:bg-gray-200 focus-visible:ring-2 focus:outline-none focus:ring-black font-medium rounded-lg text-lg px-10 py-3 text-center inline-flex items-center dark:focus:ring-black mr-4"
       onClick={() => {
         currentTrack.value = {
