@@ -110,7 +110,7 @@ export default function Player() {
             {artist}
           </div>
         </div>
-        <audio class="min-w-96" ref={audioPlayer} controls />
+        <audio class="min-w-96" ref={audioPlayer} controls src={currentTrack.value.track} />
       </div>
     </div>
   )
