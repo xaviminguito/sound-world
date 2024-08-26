@@ -1,0 +1,24 @@
+---
+import Base from "../layouts/Base.astro";
+import Layout from "@/layouts/Layout.astro";
+
+const { email } = Astro.locals;
+---
+
+<Layout title="Dashboard">
+  <section class="py-24 px-4 w-full flex flex-col items-center gap-4">
+    <h1 class="max-w-prose text-3xl mb-2 font-bold dark:text-zinc-100">
+      Welcome to your dashboard
+    </h1>
+    <p
+        class="max-w-prose text-xl text-zinc-800 dark:text-indigo-400 font-semibold"
+    >
+      {email}
+    </p>
+    <a
+      href="/api/auth/signout"
+      class="my-10 bg-zinc-900 dark:bg-zinc-100 text-zinc-100 dark:text-zinc-900 px-3 py-1 rounded-md"
+      >Sign out</a
+    >
+  </section>
+</Layout>
