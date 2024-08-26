@@ -20,10 +20,10 @@ import albums from '@/data/albums.json';
         {
           albums.map((album) => (
             <Card
-              id={album.idAlbum}
-              name={album.strAlbum}
-              artist={album.strArtist}
-              image_url={album.strAlbumThumb}
+              id={album.id}
+              name={album.name}
+              artist={album.artist_name}
+              image_url={album.thumb}
             />
           ))
         }

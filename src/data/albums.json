@@ -1,9 +1,9 @@
 [
   {
-    "idAlbum": "djMins-hard-techno-24",
-    "idArtist": "djMins",
-    "strAlbum": "Hard Techno 2024",
-    "strArtist": "Dj Mins",
-    "strAlbumThumb": "../../covers/hard-techno.jpg"
+    "id": "dj-Mins-hard-techno-24",
+    "user_id": "djMins",
+    "name": "Hard Techno 2024",
+    "artist_name": "Dj Mins",
+    "thumb": "../../covers/hard-techno.jpg"
   }
 ]
