@@ -33,7 +33,7 @@ export default function Player() {
 
   useEffect(() => {
     if (isPlaying.value) {
-      audioPlayer.current?.play()
+      //audioPlayer.current?.play()
       progressRef.current = requestAnimationFrame(whilePlaying)
       isPlaying.value = true
     } else {
