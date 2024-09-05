@@ -1,4 +1,4 @@
-import { currentTrack, isPlaying, currentAlbum, type Track } from './state'
+import { isPlaying } from './state'
 
 type Props = {
   track: string
@@ -11,9 +11,6 @@ type Props = {
 export default function PlayButton({
   track,
   id,
-  albumName,
-  artist,
-  imageUrl,
 }: Props) {
   return (
     <button
@@ -45,7 +42,6 @@ export default function PlayButton({
 
           audioPlayer.onpause = () => {
             playPauseButton.textContent = '►';
-            audioPlayer.pause();
           }
         }
       }
