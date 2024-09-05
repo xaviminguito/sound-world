@@ -2,9 +2,10 @@
 import Card from '@/components/Card.astro'
 import Layout from '@/layouts/Layout.astro'
 import albums from '@/data/albums.json';
+import {getAlbums} from "../ui/api/getAlbums"
 
 //const response = await fetch('https://music-api.charca.workers.dev/albums')
-//const albums = await response.json()
+const albumsSupabase = await getAlbums()
 ---
 
 <Layout title="Sound World - All you need is Music">
@@ -17,14 +18,24 @@ import albums from '@/data/albums.json';
       </h1>
 
       <div class="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-        {
+        <!--{
           albums.map((album) => (
             <Card
               id={album.id}
-              name={album.name}
+              title={album.title}
               artist={album.artist_name}
-              image_url={album.thumb}
+              image_url={album.cover_url}
             />
+          ))
+        }-->
+        {
+          albumsSupabase.map((album) => (
+              <Card
+                  id={album.user_id}
+                  title={album.title}
+                  artist={album.artist_name}
+                  image_url={album.cover_url}
+              />
           ))
         }
       </div>

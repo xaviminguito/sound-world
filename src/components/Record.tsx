@@ -1,32 +1,26 @@
-import { isPlaying, currentTrack } from './state'
-
 export default function Record({
-  albumId,
-  artist,
+  id,
+  artist_name,
   title,
-  imageUrl,
+  cover_url,
 }: {
-  albumId: string
-  artist: string
+  id: string
+  artist_name: string
   title: string
-  imageUrl: string
+  cover_url: string
 }) {
-  const isPlayingCurrentRecord =
-    isPlaying.value && currentTrack.value.albumId === albumId
-  const className =
-    'absolute top-0 opacity-0 vynil-image vynil-animation-in' +
-    (isPlayingCurrentRecord ? '-spinning' : '')
+  const className = 'absolute top-0 opacity-0 vynil-image vynil-animation-in'
 
   return (
     <div class="relative shadow-xl mr-32 w-72 md:w-auto">
       <img
-        src={imageUrl}
-        alt={`${artist} - ${title} album cover`}
+        src={cover_url}
+        alt={`${artist_name} - ${title} album cover`}
         aria-hidden="true"
         width="400"
         height="400"
         class="block rounded-md tag-album-cover relative z-10 bg-white"
-        transition-name={`record-${albumId}`}
+        transition-name={`record-${id}`}
       />
       <img
         src="/vynil-lp.webp"
@@ -34,8 +28,9 @@ export default function Record({
         width="400"
         height="400"
         class={className}
-        transition-name={`vinyl-${albumId}`}
+        transition-name={`vinyl-${id}`}
         aria-hidden="true"
+        id={`record-${id}`}
       />
     </div>
   )

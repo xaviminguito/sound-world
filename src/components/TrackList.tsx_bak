@@ -3,7 +3,7 @@ import { currentTrack, isPlaying, type Track } from './state'
 
 type Props = {
   tracks: Track[]
-  albumName: string
+  title: string
   albumId: string
   artist: string
   imageUrl: string
@@ -55,7 +55,7 @@ function renderIcon(icon: JSX.Element, position: number) {
 export default function TrackList({
   tracks,
   albumId,
-  albumName,
+  title,
   artist,
   imageUrl,
 }: Props) {
@@ -73,7 +73,7 @@ export default function TrackList({
               onClick={() => {
                 currentTrack.value = {
                   ...track,
-                  albumName,
+                  title,
                   albumId,
                   artist,
                   imageUrl,

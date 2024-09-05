@@ -2,8 +2,8 @@
   {
     "id": "dj-Mins-hard-techno-24",
     "user_id": "djMins",
-    "name": "Hard Techno 2024",
+    "title": "Hard Techno 2024",
     "artist_name": "Dj Mins",
-    "thumb": "../../covers/hard-techno.jpg"
+    "cover_url": "../../covers/hard-techno.jpg"
   }
 ]

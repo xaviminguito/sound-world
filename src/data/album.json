@@ -1,12 +1,12 @@
 {
   "id": "dj-Mins-hard-techno-24",
-  "user_id": "112016",
-  "name": "Hard Techno 2024",
+  "user_id": "112123",
+  "title": "Hard Techno 2024",
   "artist_name": "Dj Mins",
   "year_released": "2024",
   "genre": "Hard techno",
-  "thumb": "../../covers/hard-techno.jpg",
-  "track": "https://spain-djs.s3.eu-north-1.amazonaws.com/sessions/song5.mp3",
+  "cover_url": "../../covers/hard-techno.jpg",
+  "track": "",
   "tracks": [
     {
       "id": "stumbline-in",
