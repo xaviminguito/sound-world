@@ -35,7 +35,8 @@ export default function PlayButton({
             })
 
             spinningRecord.classList.toggle('spinning');
-            isPlaying.value = true
+            isPlaying.value = true;
+            localStorage.setItem('playerVisible', 'true');
           } else {
             playPauseButton.textContent = '►';
           }

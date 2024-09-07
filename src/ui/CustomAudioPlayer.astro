@@ -55,7 +55,7 @@ const customTransition = {
         height: 100%;
         background-color: #ff6600;
         border-radius: 3px;
-        width: 0%;
+        width: 0;
         transition: width 0.1s linear;
     }
     .volume-control {
@@ -104,10 +104,10 @@ const customTransition = {
             <div class="volume-bar-fill" id="volume-bar-fill"></div>
         </div>
     </div>
-    <audio id="audio" transition:persist></audio>
+    <audio id="audio" controls transition:persist></audio>
 </audio-player>
 
-<script>
+<!--<script>
     class AudioPlayer extends HTMLElement {
         constructor() {
             super();
@@ -161,4 +161,39 @@ const customTransition = {
     }
 
     customElements.define('audio-player', AudioPlayer);
+</script>-->
+
+<script>
+  if (typeof window !== "undefined") {
+    // Funciones para persistir la visibilidad del reproductor
+    const setPlayerVisibility = (isVisible) => {
+      localStorage.setItem('playerVisible', isVisible ? 'true' : 'false');
+    };
+
+    const getPlayerVisibility = () => {
+      return localStorage.getItem('playerVisible') === 'true';
+    };
+
+    window.addEventListener('change', () => {
+      const player = document.querySelector('audio-player');
+      const audio = document.querySelector('audio');
+
+      // Restaurar la visibilidad al cargar la página
+      if (getPlayerVisibility()) {
+        player.style.opacity = 1;
+      }
+
+      // Mostrar el reproductor cuando se reproduce el audio
+      audio.addEventListener('play', () => {
+        player.style.opacity = 1;
+        setPlayerVisibility(true);
+      });
+
+      // Si prefieres ocultarlo al pausar el audio, puedes manejar ese evento
+      audio.addEventListener('pause', () => {
+        player.style.opacity = 0; // O mantener visible si prefieres
+        setPlayerVisibility(false);
+      });
+    });
+  }
 </script>
