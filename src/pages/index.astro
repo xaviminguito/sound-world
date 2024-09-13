@@ -17,16 +17,6 @@ const albumsSupabase = await getAlbums()
       </h1>
 
       <div class="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-        <!--{
-          albums.map((album) => (
-            <Card
-              id={album.id}
-              title={album.title}
-              artist={album.artist_name}
-              image_url={album.cover_url}
-            />
-          ))
-        }-->
         {
           albumsSupabase.map((album) => (
               <Card

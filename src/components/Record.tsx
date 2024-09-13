@@ -1,21 +1,21 @@
 export default function Record({
   id,
-  artist_name,
-  title,
-  cover_url,
+  artistName,
+  albumName,
+  coverUrl,
 }: {
   id: string
-  artist_name: string
-  title: string
-  cover_url: string
+  artistName: string
+  albumName: string
+  coverUrl: string
 }) {
   const className = 'absolute top-0 opacity-0 vynil-image vynil-animation-in'
 
   return (
     <div class="relative shadow-xl mr-32 w-72 md:w-auto">
       <img
-        src={cover_url}
-        alt={`${artist_name} - ${title} album cover`}
+        src={coverUrl}
+        alt={`${artistName} - ${albumName} album cover`}
         aria-hidden="true"
         width="400"
         height="400"
