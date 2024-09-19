@@ -12,7 +12,7 @@ export default function Record({
   const className = 'absolute top-0 opacity-0 vynil-image vynil-animation-in'
 
   return (
-    <div class="relative shadow-xl mr-32 w-72 md:w-auto">
+    <div class="relative shadow-xl max-w-48">
       <img
         src={coverUrl}
         alt={`${artistName} - ${albumName} album cover`}
