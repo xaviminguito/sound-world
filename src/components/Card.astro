@@ -15,7 +15,7 @@ const { id, title, artist, image_url } = Astro.props
       class="shadow-md hover:shadow-lg relative"
     >
       <img
-        class="card-image rounded-md relative z-10"
+        class="card-image rounded-md relative z-10 transition hover:scale-110"
         src={image_url}
         alt={`${artist} - ${title} album cover`}
         aria-hidden="true"

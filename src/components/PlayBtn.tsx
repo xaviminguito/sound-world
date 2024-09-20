@@ -71,7 +71,7 @@ const PlayBtn = ({ track, id }: Props) => {
 
   return (
             <button
-                    className="track-btn text-pink-700 bg-gray-100 hover:bg-gray-200 focus-visible:ring-2 focus:outline-none focus:ring-black font-medium rounded-lg text-lg px-8 py-1.5 text-center inline-flex items-center dark:focus:ring-black mr-4"
+                    className="track-btn transition hover:scale-110 text-pink-700 bg-gray-100 hover:bg-gray-200 focus-visible:ring-2 focus:outline-none focus:ring-black font-medium rounded-lg text-lg px-8 py-1.5 text-center inline-flex items-center dark:focus:ring-black mr-4"
                     id={"play-pause-" + id}
                     onClick={(e) => handleClick(e)}
             >
