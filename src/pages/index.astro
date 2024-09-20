@@ -20,7 +20,8 @@ const albumsSupabase = await getAlbums()
         {
           albumsSupabase.map((album) => (
               <Card
-                  id={album.user_id}
+                  id={album.id}
+                  user_id={album.user_id}
                   title={album.title}
                   artist={album.artist_name}
                   image_url={album.cover_url}

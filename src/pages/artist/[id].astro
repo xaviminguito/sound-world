@@ -26,6 +26,7 @@ const albums = albumsSupabase.filter(album => album.user_id == id);
             client:visible
             artistName={album.artist_name}
             id={album.id}
+            user_id={album.user_id}
             albumName={album.title}
             coverUrl={album.cover_url}
           />

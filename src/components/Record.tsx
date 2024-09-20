@@ -1,10 +1,12 @@
 export default function Record({
   id,
+  user_id,
   artistName,
   albumName,
   coverUrl,
 }: {
   id: string
+  user_id: string
   artistName: string
   albumName: string
   coverUrl: string
@@ -20,7 +22,7 @@ export default function Record({
         width="400"
         height="400"
         class="block rounded-md tag-album-cover relative z-10 bg-white"
-        transition-name={`record-${id}`}
+        transition-name={`img-${id}`}
       />
       <img
         src="/vynil-lp.webp"
