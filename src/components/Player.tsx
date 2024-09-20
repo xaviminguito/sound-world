@@ -14,8 +14,8 @@ const Player = () => {
   }, []);
 
   return (
-          <div className={`audio-player${visible ? 'playing' : ''}`}>
-              <audio id="audio" className={'w-full'} controls></audio>
+          <div className={`audio-player audio-player bg-neutral-900 py-2${visible ? 'playing' : ''}`}>
+              <audio id="audio" className={'w-full bg-neutral-900'} controls></audio>
           </div>
   );
 };

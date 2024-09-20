@@ -48,6 +48,26 @@ const canonicalURL = new URL(Astro.url).href;
 </html>
 
 <style is:global>
+  body {
+    background-image: linear-gradient(339deg, #dbc37a 0, #a77d44 100%)
+  }
+  audio::-webkit-media-controls-panel {
+    background-color: #dbc37b;
+    border-radius: 8px;
+  }
+  audio::-webkit-media-controls-play-button {
+    background-color: #917848; /* Color del botón de play */
+    border-radius: 50%;
+  }
+
+  audio::-webkit-media-controls-volume-slider {
+    background-color: #3a3a3a; /* Fondo del slider de volumen */
+  }
+
+  audio::-webkit-media-controls-current-time-display,
+  audio::-webkit-media-controls-duration-display {
+    color: #fff; /* Texto blanco */
+  }
   #audio-player {
     z-index: 90;
   }
